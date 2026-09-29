@@ -1,0 +1,6 @@
+{
+  "name": "LDR",
+  "author": "Arduino IoT",
+  "pins": ["VCC", "GND", "POT", "LIGHT", "OUT"],
+  "controls": []
+}

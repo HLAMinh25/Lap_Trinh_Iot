@@ -1,0 +1,6 @@
+{
+  "name": "BC547",
+  "author": "Arduino IoT",
+  "pins": ["B", "C", "E"],
+  "controls": []
+}

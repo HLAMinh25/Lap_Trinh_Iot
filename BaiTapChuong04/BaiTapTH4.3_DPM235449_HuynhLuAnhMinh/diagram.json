@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "author": "Nguyễn Văn Thắng",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -18.6, "left": 66.6, "attrs": {} },
+    { "type": "wokwi-breadboard", "id": "bb", "top": 237, "left": -112.4, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 529.6,
+      "left": 368.6,
+      "rotate": 180,
+      "attrs": { "color": "red", "flip": "1" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 340.8,
+      "left": 345.05,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    { "type": "wokwi-buzzer", "id": "bz1", "top": 194.4, "left": 606.6, "attrs": {} },
+    { "type": "wokwi-photoresistor-sensor", "id": "ldr1", "top": 128, "left": -268, "attrs": {} }
+  ],
+  "connections": [
+    [ "uno:GND.1", "bb:tn.1", "black", [ "v-19.2", "h-249.3", "v288.1" ] ],
+    [ "ldr1:VCC", "bb:tp.8", "red", [ "h0" ] ],
+    [ "ldr1:GND", "bb:tn.10", "black", [ "h0" ] ],
+    [ "ldr1:DO", "uno:4", "blue", [ "h0" ] ],
+    [ "uno:5V", "bb:tp.27", "red", [ "v0" ] ],
+    [ "uno:7", "bb:51t.a", "green", [ "v-19.2", "h138" ] ],
+    [ "bb:tn.40", "bb:49t.b", "black", [ "v0" ] ],
+    [ "bb:49b.j", "led1:C", "black", [ "v0" ] ],
+    [ "bb:51t.c", "led1:A", "green", [ "v0" ] ],
+    [ "bb:bn.50", "bz1:2", "black", [ "v-1.3", "h153.2" ] ],
+    [ "r1:1", "bb:49t.d", "", [ "$bb" ] ],
+    [ "r1:2", "bb:49b.h", "", [ "$bb" ] ],
+    [ "uno:8", "bz1:1", "green", [ "v-48", "h355.6", "v336" ] ]
+  ],
+  "dependencies": {}
+}
