@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "author": "HUYNH LU ANH MINH",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard", "id": "bb1", "top": 73.8, "left": -294.8, "attrs": {} },
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": -172.8,
+      "left": -148.76,
+      "attrs": {}
+    },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -95.7, "left": 129, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.1", "bb1:tn.9", "black", [ "h0" ] ],
+    [ "esp:3V3", "bb1:tp.7", "red", [ "h0" ] ],
+    [ "bb1:tp.35", "bb1:43t.a", "red", [ "v0" ] ],
+    [ "dht1:VCC", "bb1:43t.b", "red", [ "v0" ] ],
+    [ "dht1:GND", "bb1:48t.b", "black", [ "v0" ] ],
+    [ "bb1:tn.39", "bb1:48t.a", "black", [ "v0" ] ],
+    [ "esp:4", "bb1:28t.d", "green", [ "h0" ] ],
+    [ "dht1:SDA", "bb1:45t.d", "green", [ "v0" ] ],
+    [ "bb1:28t.e", "bb1:45t.e", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

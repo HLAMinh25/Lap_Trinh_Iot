@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "author": "HUYNH LU ANH MINH",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard", "id": "bb1", "top": 112.2, "left": -256.4, "attrs": {} },
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": -124.8,
+      "left": -177.56,
+      "attrs": {}
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": 358.34,
+      "left": 86.63,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 347.2,
+      "left": -24.6,
+      "rotate": 180,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 167.15,
+      "left": -67.2,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:3V3", "bb1:tp.1", "red", [ "h0" ] ],
+    [ "esp:GND.1", "bb1:tn.2", "black", [ "h0" ] ],
+    [ "esp:2", "bb1:18t.a", "green", [ "h0" ] ],
+    [ "bb1:24t.e", "bb1:24b.f", "green", [ "v0" ] ],
+    [ "bb1:24b.j", "led1:A", "green", [ "v0" ] ],
+    [ "led1:C", "bb1:27b.i", "black", [ "v0" ] ],
+    [ "bb1:27b.j", "bb1:bn.21", "black", [ "v0" ] ],
+    [ "bb1:tn.50", "bb1:61t.a", "black", [ "v0" ] ],
+    [ "bb1:tp.49", "bb1:60t.a", "red", [ "v0" ] ],
+    [ "bb1:61t.e", "bb1:61b.f", "black", [ "v0" ] ],
+    [ "bb1:60t.e", "bb1:60b.f", "black", [ "v0" ] ],
+    [ "bb1:bn.50", "bb1:61b.j", "black", [ "v0" ] ],
+    [ "bb1:bp.49", "bb1:60b.j", "red", [ "v0" ] ],
+    [ "oled1:VCC", "bb1:40b.i", "red", [ "v0" ] ],
+    [ "bb1:bp.32", "bb1:40b.j", "red", [ "v0" ] ],
+    [ "r1:1", "bb1:18t.b", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:24t.b", "", [ "$bb" ] ],
+    [ "oled1:GND", "bb1:37b.i", "black", [ "v0" ] ],
+    [ "bb1:bn.30", "bb1:37b.j", "black", [ "v0" ] ],
+    [ "oled1:SDA", "bb1:45b.j", "green", [ "v-28.8", "h38.47" ] ],
+    [ "oled1:SCL", "bb1:43b.j", "green", [ "v-38.4", "h19.5" ] ],
+    [ "bb1:43b.f", "bb1:43t.e", "green", [ "v0" ] ],
+    [ "bb1:45b.f", "bb1:45t.e", "green", [ "v0" ] ],
+    [ "bb1:45t.a", "esp:21", "green", [ "v0" ] ],
+    [ "esp:22", "bb1:47t.a", "green", [ "h0" ] ],
+    [ "bb1:47t.c", "bb1:43t.c", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
